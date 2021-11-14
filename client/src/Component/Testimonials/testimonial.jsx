@@ -29,6 +29,15 @@ const Testimonials = () => {
 
 
     }
+    const deleteProduct = async (_id) => {
+        try {
+            const response = await axios.delete(`http://localhost:8001/api/Testimonials/deleteTestimoinal/${_id}`)
+            console.log("response: ", response)
+            toast.success("deleted product succesfully !!")
+        } catch (error) {
+            console.log("error", error.response);
+        }
+    }
     useEffect(() => {
         getTestimonials()
             
@@ -89,6 +98,7 @@ const Testimonials = () => {
                             </div>
                         )
                     })}
+                    <i class="fas fa-trash-alt"></i>
                 </div>
             </section>
         </div>
