@@ -1,5 +1,6 @@
 {
   "name": "my",
+ "homepage": "https://kind-goldstine-f38eae.netlify.app/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
