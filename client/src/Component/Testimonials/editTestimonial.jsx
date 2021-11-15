@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEdit } from '@fortawesome/free-solid-svg-icons'
 import axios from 'axios'
 import { Link } from "react-router-dom";
 
@@ -23,7 +25,7 @@ const customStyles = {
         alignItems: "center",
         backgroundColor: "#f5f5f5",
         flexDirection: "column",
-        width: "450px",
+        width: "700px",
     },
 };
 
@@ -75,7 +77,7 @@ const EditTestimonialModal = (testimonial) => {
 
     return (
         <>
-            <i class="far fa-edit" onClick={openModal}></i>
+            <FontAwesomeIcon onClick={openModal} icon={faEdit} />
             <Modal
                 isOpen={modalIsOpen}
                 shouldCloseOnOverlayClick={false}
@@ -126,7 +128,7 @@ const EditTestimonialModal = (testimonial) => {
 
 
                             <button onClick={updateTestimonial} >Update Testimonial</button>
-                            <EditTestimonialModal />
+                            <button onClick={closeModal} className="btn btn-danger" >Cancel</button>
 
 
                         </div>

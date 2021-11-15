@@ -39,7 +39,7 @@ const addTestimonial = async (request, response) => {
 
 const getAllTestimonials = async (request, response) => {
     try {
-        const testimonials = await Testimonial.find()
+        const testimonials = await Testimonial.find({Active : true})
         response.status(201).json(testimonials);
     }
     catch (error) {

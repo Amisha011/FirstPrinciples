@@ -6,6 +6,9 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom"
 import AddTestimonial from "./addTestimonial";
 import EditTestimonial from './editTestimonial';
+import EditTestimonialModal from "./editTestimonial";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrash } from '@fortawesome/free-solid-svg-icons'
 
 
 const Testimonials = () => {
@@ -24,7 +27,6 @@ const Testimonials = () => {
         const response = await axios.get("http://Localhost:8001/api/Testimonials/getAllTestimoinal");
         console.log("response", response);
         const arrayOfData = response.data
-
         setState(arrayOfData);
 
 
@@ -74,6 +76,8 @@ const Testimonials = () => {
                                         <div class="col-lg-4">
 
                                             <div class="single-testimonial mt-30 mb-30 text-center">
+                                                <EditTestimonialModal />
+                                                <FontAwesomeIcon onClick={() => {deleteTesimonial(data._id)}} className="ml-2" icon={faTrash} />
                                                 <div class="testimonial-image">
                                                     <i class="far fa-edit"></i>
                                                     <i class="fas fa-trash-alt"></i>
