@@ -3,12 +3,27 @@
     flex-direction: column;
     margin: 10px;
 }
-
+.productDetails h1{
+color: black;
+}
 .bttns-at-testimonial{
 display: flex;
 justify-content: end;
 margin-bottom: 4px;
 
+}
+.testimonials-slider{
+    display: flex;
+    flex-direction: row;
+    width: 29%;
+    margin: 20px 21px;
+}
+.container1{
+display: flex;
+flex-wrap:wrap
+}
+.row.justify-content-center {
+    width: 100%;
 }
 .bttns-at-testimonial i{
     margin: 1px 7px;
@@ -21,8 +36,8 @@ margin-bottom: 4px;
 }
 .productDetails h1{
     font-size: larger;
-    color: aliceblue;
-    /* font-style: italic; */
+    color:black;
+    
     font-family: cursive;
     padding: 10px;
 
@@ -30,15 +45,106 @@ margin-bottom: 4px;
 .productDetails button{
     width: 50%;
     display: flex;
-    margin-left: 198px;
-    padding: 10px;
-    padding-left: 210px;
+    margin: 0px 193px;
+    padding: 9px 30px;
     background-color: #17ae17;
     color: white;
     border: none;
     font-weight: 700;
+
 }
 .productDetails input{
-    margin: 10px;
+   
     padding: 17px;
+    border: 2px solid black;
+    margin : 10px 37px
+
+}
+.productDetails textarea{
+    margin: 10px 32px;
+    height: 150px;
+    border: 2px solid black;
+}
+#addTestimonial
+{
+   
+     padding: 10px;
+      position:fixed;
+       display:flex;
+       justify-content: center;
+       width: 100%;
+       height: 100vh;
+       align-items: center;
+       right: 0;
+       top:0;
+       z-index:100
+}
+#addTestimonial div{
+    background-color: white;
+}
+.add-bttn{
+    width: 100%;
+    margin: 6px 94px;
+    text-align: left;
+    padding: 10px 5px;
+   
+    width: 45%;
+}
+#editTestimonial
+{
+   
+     padding: 10px;
+     
+       display:flex;
+       justify-content: center;
+       width: 100%;
+    
+       align-items: center;
+      
+       
+}
+#editTestimonial h1{
+    font-size: larger;
+    padding:10px
+}
+.productDetails1{
+    display: flex;
+    flex-direction: column;
+   
+
+
+
+}
+.productDetails1 input{
+    margin: 10px;
+    padding: 10px;
+    border: none;
+    width: 100%;
+}
+.reset-screen1{
+ 
+}
+.productDetails1 textarea{
+    height: 120px;
+    border: none;
+    margin: 10px;
+    width: 460px;
+}
+.productDetails1 button{
+    width: 200px;
+    margin: 10px;
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px;
+}
+.cancel{
+background-color: red;
+}
+.add-testimonials{
+    margin: 10px;
+    padding: 16px 37px;
+    background-color: #800080c2;
+    color: white;
+    border: none;
 }

@@ -57,53 +57,56 @@ const AddTestimonial = () => {
     }
 
     return (
-        <div id="addTestimonial" style={{ backgroundColor: "cadetblue", padding: "10px" }}>
+        <div id="addTestimonial" style={{}}>
 
-            <div className="productDetails">
-                <h1>Create Testimonial</h1>
+            <div>
+                <div className="productDetails">
+                    <h1>Create Testimonial</h1>
 
-                <input
-                    type="text"
-                    name="Name"
-                    placeholder="Name"
-                    value={TestimonialFormData.Name}
-                    onChange={changeTestimonialFormData}>
+                    <input
+                        type="text"
+                        name="Name"
+                        placeholder="Name"
+                        value={TestimonialFormData.Name}
+                        onChange={changeTestimonialFormData}>
 
-                </input>
+                    </input>
 
-                <input
-                    style={{ backgroundColor: "white", borderColor: "-internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133))", borderImage: "initial", color: "gray" }}
-                    border
-                    type="file"
-                    name="Photo"
-                    placeholder="image url"
-                    onChange={async (e) => {
-                        const url = await uploadImage(e)
-                        setTestimonialFormData({ ...TestimonialFormData, ["Photo"]: url });
-                        console.log("url", url);
+                    <input
+                        style={{ backgroundColor: "white", borderColor: "-internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133))", borderImage: "initial", color: "gray" }}
+                        border
+                        type="file"
+                        name="Photo"
+                        placeholder="image url"
+                        onChange={async (e) => {
+                            const url = await uploadImage(e)
+                            setTestimonialFormData({ ...TestimonialFormData, ["Photo"]: url });
+                            console.log("url", url);
 
-                    }}></input>
+                        }}></input>
 
-                <input
-                    type="text"
-                    name="Post"
-                    placeholder="Post"
-                    value={TestimonialFormData.Post}
-                    onChange={changeTestimonialFormData}></input>
+                    <input
+                        type="text"
+                        name="Post"
+                        placeholder="Post"
+                        value={TestimonialFormData.Post}
+                        onChange={changeTestimonialFormData}></input>
 
-                <input
-                    type="text"
-                    name="TestimonialDescription"
-                    placeholder=" Add Testimonial Description"
-                    value={TestimonialFormData.TestimonialDescription}
-                    onChange={changeTestimonialFormData}></input>
-
-
-
-
-                <button onClick={addTestimonials} >ADD TESTIMONIAL</button>
+                    <textarea
+                        type="text"
+                        name="TestimonialDescription"
+                        placeholder=" Add Testimonial Description"
+                        
+                        onChange={changeTestimonialFormData}>
+                        {TestimonialFormData.TestimonialDescription}</textarea>
 
 
+
+
+                    <button className="add-bttn" onClick={addTestimonials} >ADD TESTIMONIAL</button>
+
+
+                </div>
             </div>
         </div>
     )

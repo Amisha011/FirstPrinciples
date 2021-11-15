@@ -29,7 +29,7 @@ const customStyles = {
     },
 };
 
-const EditTestimonialModal = (testimonial) => {
+const EditTestimonialModal = ({ testimonial }) => {
     // Initializations
     //   const history = useHistory();
     console.log(testimonial)
@@ -45,10 +45,10 @@ const EditTestimonialModal = (testimonial) => {
     // States
     // Functions
     const [testimonialFormData, setTestimonialFormData] = useState({
-        Name: testimonial.Name,
-        Post: testimonial.Post,
-        Photo: testimonial.Photo,
-        TestimonialDescription: testimonial.TestimonialDescription
+        Name: testimonial?.Name,
+        Post: testimonial?.Post,
+        Photo: testimonial?.Photo,
+        TestimonialDescription: testimonial?.TestimonialDescription
     })
     const [testimonialId, setTestimonialId] = useState(" ");
     const changeTestimonialFormData = (e) => {
@@ -62,7 +62,7 @@ const EditTestimonialModal = (testimonial) => {
         console.log(testimonialId);
         console.log(testimonial._id)
         try {
-            const response = await axios.put(`http://localhost:8001/api/Testimonials/updateProduct/${testimonial._id}`, testimonialFormData);
+            const response = await axios.put(`http://localhost:8001/api/Testimonials/updateTestimoinal/${testimonial._id}`, testimonialFormData);
             toast.success("Successfully Updated tsetimonial !!");
         } catch (error) {
             console.log("error", error.response);
@@ -79,56 +79,62 @@ const EditTestimonialModal = (testimonial) => {
         <>
             <FontAwesomeIcon onClick={openModal} icon={faEdit} />
             <Modal
+                ariaHideApp={false}
                 isOpen={modalIsOpen}
                 shouldCloseOnOverlayClick={false}
                 shouldCloseOnEsc={false}
                 style={customStyles}
                 contentLabel="Example Modal"
             >
-                <div className="reset-screen">
-                    <div id="addTestimonial" style={{ backgroundColor: "cadetblue", padding: "10px" }}>
-                        Add Testimonialss
-                        <div className="productDetails">
-                            <h1>ADD Testimonials details </h1>
+                <div className="reset-screen1">
+                    <div id="editTestimonial" >
+
+                        <div className="productDetails1">
+                            <h1>EDIT TESTIMONIAL </h1>
 
                             <input
                                 type="text"
                                 name="Name"
                                 placeholder="Name"
                                 value={testimonialFormData.Name}
-                                onChange={changeTestimonialFormData}>
+                                onChange={changeTestimonialFormData} />
 
-                            </input>
 
-                            <input
+
+                            {/* <input
                                 style={{ backgroundColor: "white", borderColor: "-internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133))", borderImage: "initial", color: "gray" }}
                                 border
                                 type="file"
                                 name="Photo"
                                 placeholder="image url"
+                                
+                                onChange={changeTestimonialFormData} ><b>{testimonialFormData.Photo}</b></input> */}
+                            {/* <input
+                                type="text"
+                                name="image"
+                                placeholder="image url"
                                 value={testimonialFormData.Photo}
-                                onChange={changeTestimonialFormData}>
-                            </input>
+                                onChange={changeTestimonialFormData}></input> */}
 
                             <input
                                 type="text"
                                 name="Post"
                                 placeholder="Post"
                                 value={testimonialFormData.Post}
-                                onChange={changeTestimonialFormData}></input>
+                                onChange={changeTestimonialFormData} />
 
-                            <input
+                            <textarea
                                 type="text"
                                 name="TestimonialDescription"
                                 placeholder=" Add Testimonial Description"
-                                value={testimonialFormData.TestimonialDescription}
-                                onChange={changeTestimonialFormData}></input>
+                                onChange={changeTestimonialFormData}>
+                                {testimonialFormData.TestimonialDescription}</textarea >
 
 
 
 
                             <button onClick={updateTestimonial} >Update Testimonial</button>
-                            <button onClick={closeModal} className="btn btn-danger" >Cancel</button>
+                            <button className="cancel" onClick={closeModal} className="btn btn-danger" >Cancel</button>
 
 
                         </div>
