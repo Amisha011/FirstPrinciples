@@ -107,8 +107,9 @@ const EditTestimonialModal = ({ testimonial }) => {
                                 type="file"
                                 name="Photo"
                                 placeholder="image url"
-                                
-                                onChange={changeTestimonialFormData} ><b>{testimonialFormData.Photo}</b></input> */}
+                                value={testimonialFormData.Photo}
+                                onChange={changeTestimonialFormData} ></input> */}
+
                             {/* <input
                                 type="text"
                                 name="image"
