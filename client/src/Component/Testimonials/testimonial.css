@@ -3,6 +3,22 @@
     flex-direction: column;
     margin: 10px;
 }
+
+.bttns-at-testimonial{
+display: flex;
+justify-content: end;
+margin-bottom: 4px;
+
+}
+.bttns-at-testimonial i{
+    margin: 1px 7px;
+        color: purple;  
+        cursor: pointer; 
+}
+.bttns-at-testimonial i:hover{
+    color: red;
+
+}
 .productDetails h1{
     font-size: larger;
     color: aliceblue;

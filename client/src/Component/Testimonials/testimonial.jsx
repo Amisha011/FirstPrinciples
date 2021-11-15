@@ -1,7 +1,9 @@
 import React from "react";
 import axios from "axios"
+import "./testimonial.css"
 import 'react-toastify/dist/ReactToastify.css';
 import { toast } from "react-toastify";
+import { useHistory } from "react-router-dom"
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom"
 import AddTestimonial from "./addTestimonial";
@@ -13,7 +15,7 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons'
 
 const Testimonials = () => {
 
-
+  // const history = useHistory();
     // const history = useHistory();
     const [state, setState] = useState([]);
 
@@ -76,11 +78,13 @@ const Testimonials = () => {
                                         <div class="col-lg-4">
 
                                             <div class="single-testimonial mt-30 mb-30 text-center">
-                                                <EditTestimonialModal />
-                                                <FontAwesomeIcon onClick={() => {deleteTesimonial(data._id)}} className="ml-2" icon={faTrash} />
+                                                <div className="bttns-at-testimonial">
+                                                    <i class="far fa-edit">  <EditTestimonialModal onClick={(data)=>{}} /></i>
+                                                    <i class="fas fa-trash-alt">  <FontAwesomeIcon onClick={() => { deleteTesimonial(data._id) }} className="ml-2" icon={faTrash} />
+                                                    </i>
+                                                </div>
                                                 <div class="testimonial-image">
-                                                    <i class="far fa-edit"></i>
-                                                    <i class="fas fa-trash-alt"></i>
+
                                                     <img src={data.Photo} alt="Author" />
                                                 </div>
                                                 <div class="testimonial-content">
