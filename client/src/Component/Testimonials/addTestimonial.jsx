@@ -30,9 +30,11 @@ const AddTestimonial = () => {
             const response = await axios.post("http://localhost:8001/api/Testimonials/addTestimoinal", TestimonialFormData)
             console.log("response :", response);
             toast.success("Successfully Added Testimonial");
+            setToggleOpenForm(false);
         } catch (error) {
             console.log("error", error);
             toast.error("Failed in adding Testimonial");
+            setToggleOpenForm(false);
         }
     }
     const uploadImage = async e => {

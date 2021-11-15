@@ -30,7 +30,7 @@ const customStyles = {
 const EditTestimonialModal = (testimonial) => {
     // Initializations
     //   const history = useHistory();
-console.log(testimonial)
+    console.log(testimonial)
     const [modalIsOpen, setIsOpen] = React.useState(false);
 
     function openModal() {
@@ -56,7 +56,7 @@ console.log(testimonial)
     };
 
     const updateTestimonial = async () => {
-        console.log("det",testimonialFormData);
+        console.log("det", testimonialFormData);
         console.log(testimonialId);
         console.log(testimonial._id)
         try {
@@ -75,16 +75,7 @@ console.log(testimonial)
 
     return (
         <>
-            <p
-                onClick={openModal}
-                className="cursor-pointer"
-                style={{
-                    cursor: "pointer",
-                    color: "#007bff",
-                }}
-            >
-                <i class="fas fa-edit"></i> ??
-            </p>
+            <i class="far fa-edit" onClick={openModal}></i>
             <Modal
                 isOpen={modalIsOpen}
                 shouldCloseOnOverlayClick={false}
@@ -135,7 +126,7 @@ console.log(testimonial)
 
 
                             <button onClick={updateTestimonial} >Update Testimonial</button>
-                            <EditTestimonialModal/>
+                            <EditTestimonialModal />
 
 
                         </div>

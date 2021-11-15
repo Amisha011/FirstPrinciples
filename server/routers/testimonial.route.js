@@ -8,7 +8,7 @@ const router=express.Router();
 //controllers
 router.post('/addTestimoinal',addTestimonial);
 router.get('/getAllTestimoinal',getAllTestimonials);
-// router.put('/updateTestimoinal/:id',testimonialController.updatetestimonial);
-// router.delete('/deleteTestimoinal/:id',testimonialController.deletetestimonial);
+router.put('/updateTestimoinal/:id',updateTestimonial);
+router.delete('/deleteTestimoinal/:id',deleteTestimonial);
 
 module.exports=router;

@@ -23,13 +23,13 @@ const Testimonials = () => {
         console.log("smtg smtg")
         const response = await axios.get("http://Localhost:8001/api/Testimonials/getAllTestimoinal");
         console.log("response", response);
-        const arrayOfData = []
+        const arrayOfData = response.data
 
         setState(arrayOfData);
 
 
     }
-    const deleteProduct = async (_id) => {
+    const deleteTesimonial = async (_id) => {
         try {
             const response = await axios.delete(`http://localhost:8001/api/Testimonials/deleteTestimoinal/${_id}`)
             console.log("response: ", response)
@@ -40,7 +40,7 @@ const Testimonials = () => {
     }
     useEffect(() => {
         getTestimonials()
-            
+
     }, [])
 
 
@@ -75,10 +75,12 @@ const Testimonials = () => {
 
                                             <div class="single-testimonial mt-30 mb-30 text-center">
                                                 <div class="testimonial-image">
+                                                    <i class="far fa-edit"></i>
+                                                    <i class="fas fa-trash-alt"></i>
                                                     <img src={data.Photo} alt="Author" />
                                                 </div>
                                                 <div class="testimonial-content">
-                                                    <p class="text">{data.testimonialDescription}</p>
+                                                    <p class="text">{data.TestimonialDescription}</p>
                                                     <h6 class="author-name">{data.Name}</h6>
                                                     <span class="sub-title">{data.Post}</span>
                                                     {/* <i onClick={() => {
